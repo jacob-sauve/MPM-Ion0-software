@@ -1,5 +1,5 @@
 [Unit]
-Desctiption= Battery heater service
+Description=Battery heater service
 
 [Service]
 Type=simple

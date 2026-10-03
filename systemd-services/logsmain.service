@@ -1,5 +1,5 @@
 [Unit]
-Desctiption= Logging sensor data service
+Description=Logging sensor data service
 
 [Service]
 Type=simple
