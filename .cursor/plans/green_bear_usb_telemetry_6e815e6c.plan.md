@@ -7,10 +7,10 @@ todos:
     status: completed
   - id: step2-bbg
     content: "Step 2: usb_link + FakeLink, telemetry reader + Sample, main loop, send log, greenbear.service, delete flightmain, remaining tests"
-    status: pending
+    status: completed
   - id: step3-rb-ground
     content: "Step 3 (RF repo): apps/usb-bridge firmware with cobs.c + crc16_itu_t + tx-burst radio path, dts/prj.conf, host cobs test, ground-station greenbear parser"
-    status: pending
+    status: in_progress
   - id: step4-integration
     content: "Step 4: bench integration BBG+RB+HackRF, pre-flight checklist"
     status: pending
