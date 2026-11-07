@@ -44,6 +44,26 @@ class TestUsbLinkNoDevice(unittest.TestCase):
             fake_ser.write.assert_called_once_with(stub.wire)
             link.close()
 
+    def test_read_pending_returns_buffered_bytes_then_empty_when_closed(self) -> None:
+        fake_ser = MagicMock()
+        fake_ser.is_open = True
+        fake_ser.in_waiting = 11
+        fake_ser.read.return_value = b"sent seq=1\n"
+
+        with patch("serial.Serial", return_value=fake_ser):
+            link = UsbLink(path="/dev/null")
+            self.assertEqual(link.read_pending(), b"sent seq=1\n")
+            fake_ser.read.assert_called_once_with(11)
+
+            fake_ser.in_waiting = 0
+            self.assertEqual(link.read_pending(), b"")
+
+            link.close()
+            self.assertEqual(link.read_pending(), b"")
+
+    def test_fake_link_read_pending_is_empty(self) -> None:
+        self.assertEqual(FakeLink().read_pending(), b"")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -98,5 +98,8 @@ class StubLink:
         stub = FRAMES[name]
         return self.send(stub.logical)
 
+    def read_pending(self) -> bytes:
+        return b""
+
     def close(self) -> None:
         return None

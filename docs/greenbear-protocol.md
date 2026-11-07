@@ -50,8 +50,9 @@ and the tests pin the value.
 
 ## USB framing (COBS)
 
-USB CDC ACM is a byte stream with no inherent frame boundaries. COBS is
-used **only on the USB hop**:
+The BBG→RB hop is a UART byte stream (Nano debugger CDC → RB SERCOM5,
+115200 8N1) with no inherent frame boundaries. COBS is used **only on
+this hop**:
 
 1. BBG builds the logical frame (`header | content | crc16`).
 2. BBG COBS-encodes it (plain COBS; body contains no `0x00`).

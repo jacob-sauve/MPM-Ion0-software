@@ -1,7 +1,12 @@
-"""USB CDC ACM transport.
+"""Serial transport to the RB.
 
-``send`` never raises to the caller: a down link returns False and the
-flight loop keeps logging.
+The port (``/dev/ttyACM0``) is the Curiosity Nano debugger's CDC-to-UART
+bridge, not the RB's own USB. Bytes written here land on the RB console
+UART (SERCOM5, 115200 8N1); the RB's ``printk`` output comes back on the
+same port and ``read_pending`` surfaces it.
+
+``send`` and ``read_pending`` never raise to the caller: a down link
+returns False / ``b""`` and the flight loop keeps logging.
 """
 
 from __future__ import annotations
@@ -24,6 +29,13 @@ class Link(Protocol):
 
         Returns True on success, False if the link is down / write failed.
         Must not raise.
+        """
+        ...
+
+    def read_pending(self) -> bytes:
+        """Return whatever the RB has printed back, without blocking.
+
+        ``b""`` when nothing is buffered or the link is down. Must not raise.
         """
         ...
 
@@ -67,6 +79,9 @@ class FakeLink:
         self.frames.append(frame)
         self.wire.append(wire)
         return True
+
+    def read_pending(self) -> bytes:
+        return b""
 
     def close(self) -> None:
         return None
@@ -125,6 +140,20 @@ class UsbLink:
             logger.warning("write failed: %s", exc)
             self.close()
             return False
+
+    def read_pending(self) -> bytes:
+        """Non-blocking read of RB console bytes. ``b""`` if closed/empty."""
+        if self._ser is None or not getattr(self._ser, "is_open", False):
+            return b""
+        try:
+            n = self._ser.in_waiting
+            if not n:
+                return b""
+            return bytes(self._ser.read(n))
+        except Exception as exc:
+            logger.warning("read failed: %s", exc)
+            self.close()
+            return b""
 
     def close(self) -> None:
         if self._ser is None:

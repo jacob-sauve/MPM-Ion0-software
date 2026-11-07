@@ -17,11 +17,14 @@ from cdh_packets.constants import (
     VERSION,
 )
 
-# --- USB ---
+# --- USB (Nano debugger CDC → RB SERCOM5) ---
 USB_DEVICE: str = "/dev/ttyACM0"
-USB_BAUD: int = 115200  # CDC ACM ignores baud; kept for pyserial open()
+# The nEDBG bridge applies this baud to SERCOM5; must match `current-speed`
+# in ocs_rf_1.dts.
+USB_BAUD: int = 115200
 USB_OPEN_RETRY_S: float = 5.0  # how long to wait between open attempts
 USB_WRITE_TIMEOUT_S: float = 1.0
+RB_CONSOLE_LOG: bool = True  # log RB printk lines that come back on the port
 
 # --- flight loop ---
 PACKET_INTERVAL_S: float = 20.0
@@ -43,6 +46,7 @@ __all__ = [
     "HEADER_SIZE",
     "MAX_CONTENT",
     "PACKET_INTERVAL_S",
+    "RB_CONSOLE_LOG",
     "SEND_LOG_DIR",
     "SEND_LOG_PREFIX",
     "USB_BAUD",

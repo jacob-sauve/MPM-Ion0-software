@@ -60,6 +60,19 @@ def _build_frame(seq: int, now: int, rows: list[telemetry.Sample]) -> bytes | No
         return None
 
 
+def _log_rb_console(link: Link) -> None:
+    """Log any RB printk lines that came back on the port (``rb: ...``)."""
+    if not config.RB_CONSOLE_LOG:
+        return
+    pending = link.read_pending()
+    if not pending:
+        return
+    for line in pending.decode("utf-8", errors="replace").splitlines():
+        line = line.strip()
+        if line:
+            logger.info("rb: %s", line)
+
+
 def run_loop(
     link: Link,
     *,
@@ -79,6 +92,7 @@ def run_loop(
         logger.info("stub mode: cycling %s", list(STUB_CYCLE))
 
     while True:
+        _log_rb_console(link)
         wall = time.time()
         now = int(wall)
 
@@ -119,6 +133,9 @@ def run_loop(
         seq = (seq + 1) & 0xFFFF
 
         if once:
+            # Give the RB a moment to answer so its "sent"/"drop" line is logged.
+            time.sleep(min(0.5, interval_s))
+            _log_rb_console(link)
             return
         time.sleep(interval_s)
 

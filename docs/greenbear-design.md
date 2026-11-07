@@ -44,7 +44,7 @@ logsmain (C) ──CSV──► Green Bear (Python)
                           ├─ usb_link.send (COBS + 0x00)
                           └─ send log on SD
                                 │
-                                ▼  /dev/ttyACM0
+                                ▼  /dev/ttyACM0 (Nano nEDBG CDC) → SERCOM5
                      RB usb-bridge (Zephyr)
                           │ COBS-decode, CRC check
                           ▼ radio_tx (tx-burst setup)
@@ -77,8 +77,11 @@ Ion/src/ion/greenbear/
 
 `software/apps/usb-bridge/` in `satcomms-ocs-rf-1.0`. Radio path is
 byte-for-byte the working `tx-burst` setup (RF24 asleep, RF09, preset 0,
-TX_POWER 15, TRXOFF after each send). USB CDC ACM; console stays on
-SERCOM5. Bad frames dropped and counted, never transmitted.
+TX_POWER 15, TRXOFF after each send). Input and console share SERCOM5 via
+the Nano debugger CDC; target USB (PA24/PA25) is wired to the CAN controller
+INT pins on the Green Board and is not used. RX is interrupt-driven into a
+ring buffer (the SERCOM FIFO is 2 bytes; polling drops data). Bad frames
+dropped and counted, never transmitted.
 
 ## Ground station
 
@@ -108,6 +111,9 @@ out. A full RGB migration would open at least:
 - Replacement for the CAN heartbeat that previously proved the cable.
 - Whether the RB should buffer / retransmit on its own.
 - What the Green Board CAN-FD connector becomes once USB owns the link.
+- A direct target-USB link (RB as its own CDC device, not via the debugger)
+  would need PA24/PA25 broken out; on the Green Board they go to the
+  MCP251863 INT pins.
 
 **Note to self:** replace this stub with real specs after the flight,
 informed by what the bench and the flight send-log / ground decode show.
