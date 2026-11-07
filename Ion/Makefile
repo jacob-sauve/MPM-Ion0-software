@@ -29,7 +29,7 @@ LOGS_OBJ := $(BUILD_DIR)/logsmain.o
 EXAMPLE_SRCS := $(wildcard $(EXAMPLE_DIR)/*.c)
 EXAMPLE_BINS := $(patsubst $(EXAMPLE_DIR)/%.c,$(BIN_DIR)/%,$(EXAMPLE_SRCS))
 
-.PHONY: all clean rebuild examples directories run ion-fresh run-ex setup-deps verify-yaml
+.PHONY: all clean rebuild examples directories run test ion-fresh run-ex setup-deps verify-yaml
 
 all: directories \
 	$(BIN_DIR)/flightmain \
@@ -74,6 +74,9 @@ rebuild: clean all
 run:
 	uv sync
 	uv run ion
+
+test:
+	PYTHONPATH=src uv run python -m unittest discover -s tests
 
 setup-deps:
 	@echo "Installing system dependencies..."

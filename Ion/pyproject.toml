@@ -5,15 +5,19 @@ description = "Ion software for second launch"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "oresat-olaf>=3.7.4",
+    "pyserial>=3.5",
     "pynmeagps==1.1.8",
     "pyrtcm==1.2.1",
     "pyubx2==1.4.1",
     "smbus3==0.5.5",
 ]
 
+[project.optional-dependencies]
+olaf = ["oresat-olaf>=3.7.4"]
+
 [project.scripts]
 ion = "ion.main:main"
+greenbear = "ion.greenbear.main:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/ion"]
@@ -22,6 +26,7 @@ packages = ["src/ion"]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-# Force uv to build PyYAML from source so it compiles C bindings
+# Force uv to build PyYAML from source so it compiles C bindings (needed when
+# installing the optional olaf extra).
 [tool.uv]
 no-binary-package = ["pyyaml"]

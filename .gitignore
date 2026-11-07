@@ -4,3 +4,4 @@ Ion/Arch-Attempt/ArchLinuxARM-am33x-latest.tar.gz
 **/*.swp
 **/*.egg-info/
 **/__pycache__
+**/random.md
