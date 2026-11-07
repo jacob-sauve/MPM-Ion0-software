@@ -10,6 +10,49 @@
     };
 };
 
+&ocp {
+     /* Disable cape-universal pinmux helpers so our GPIO/PWM/I2C claim the pads. */
+     P9_12_pinmux { status = "disabled"; };
+     P9_14_pinmux { status = "disabled"; };
+     P9_15_pinmux { status = "disabled"; };
+     P9_16_pinmux { status = "disabled"; };
+     P9_17_pinmux { status = "disabled"; };
+     P9_18_pinmux { status = "disabled"; };
+     P9_22_pinmux { status = "disabled"; };
+     P9_24_pinmux { status = "disabled"; };
+     P9_26_pinmux { status = "disabled"; };
+     P9_28_pinmux { status = "disabled"; };
+
+     P8_9_pinmux { status = "disabled"; };
+     P8_10_pinmux { status = "disabled"; };
+     P8_11_pinmux { status = "disabled"; };
+     P8_13_pinmux { status = "disabled"; };
+     P8_14_pinmux { status = "disabled"; };
+     P8_15_pinmux { status = "disabled"; };
+     P8_16_pinmux { status = "disabled"; };
+     P8_17_pinmux { status = "disabled"; };
+     P8_27_pinmux { status = "disabled"; };
+     P8_29_pinmux { status = "disabled"; };
+     P8_31_pinmux { status = "disabled"; };
+     P8_33_pinmux { status = "disabled"; };
+     P8_35_pinmux { status = "disabled"; };
+     P8_37_pinmux { status = "disabled"; };
+     P8_38_pinmux { status = "disabled"; };
+     P8_39_pinmux { status = "disabled"; };
+     P8_40_pinmux { status = "disabled"; };
+     P8_41_pinmux { status = "disabled"; };
+     P8_42_pinmux { status = "disabled"; };
+     P8_43_pinmux { status = "disabled"; };
+     P8_44_pinmux { status = "disabled"; };
+     P8_46_pinmux { status = "disabled"; };
+     ion_gpio_pinmux {
+         compatible = "bone-pinmux-helper";
+         status = "okay";
+         pinctrl-names = "default";
+         pinctrl-0 = <&ion_0_gpio_pins>;
+     };
+};
+
 &am33xx_pinmux {
     /* Combined GPIO configuration block */
     ion_0_gpio_pins: pinmux-ion-0-gpio-pins {
@@ -48,12 +91,13 @@
         >;
     };
 
-bb_i2c1_pins: pinmux_bb_i2c1_pins {
-    pinctrl-single,pins = <
-        0x158 0x70 0x02  /* P9_18 SDA */
-        0x15c 0x70 0x02  /* P9_17 SCL */
-    >;
-};
+    /* Two-cell <offset value> form required by am33xx_pinmux (#pinctrl-cells = <1>). */
+    bb_i2c1_pins: pinmux_bb_i2c1_pins {
+        pinctrl-single,pins = <
+            0x15c (SLEWCTRL_SLOW | PIN_INPUT_PULLUP | MUX_MODE2) /* P9_17 SCL */
+            0x158 (SLEWCTRL_SLOW | PIN_INPUT_PULLUP | MUX_MODE2) /* P9_18 SDA */
+        >;
+    };
 
     epwmss0_pins: pinmux_epwmss0_pins {
         pinctrl-single,pins = <
@@ -89,16 +133,28 @@ bb_i2c1_pins: pinmux_bb_i2c1_pins {
     clock-frequency = <100000>;
 };
 
+&epwmss0 {
+    status = "okay";
+};
+
 &ehrpwm0 {
     status = "okay";
     pinctrl-names = "default";
     pinctrl-0 = <&epwmss0_pins>;
 };
 
+&epwmss1 {
+    status = "okay";
+};
+
 &ehrpwm1 {
     status = "okay";
     pinctrl-names = "default";
     pinctrl-0 = <&epwmss1_pins>;
+};
+
+&epwmss2 {
+    status = "okay";
 };
 
 &ehrpwm2 {
