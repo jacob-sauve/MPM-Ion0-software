@@ -6,5 +6,6 @@ __all__ = [
     "packet",
     "usb_link",
     "telemetry",
+    "stub_frames",
     "main",
 ]

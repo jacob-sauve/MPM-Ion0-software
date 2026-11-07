@@ -1,10 +1,10 @@
 CC := gcc
 
-CFLAGS := -Wall -Wextra -Wpedantic -std=c11 -Ilib
+CFLAGS := -Wall -Wextra -Wpedantic -std=c11 -Isrc/ion/lib
 LDFLAGS :=
 LDLIBS := -lm -lgpiod
 
-SERVICES := batteryheater logsmain flightmain
+SERVICES := batteryheater logsmain greenbear
 SRC_DIR := src/ion/services
 LIB_DIR := src/ion/lib
 EXAMPLE_DIR := examples
@@ -22,7 +22,6 @@ LIB_SRCS := \
 
 LIB_OBJS := $(patsubst $(LIB_DIR)/%.c,$(BUILD_DIR)/%.o,$(LIB_SRCS))
 
-FLIGHT_OBJ := $(BUILD_DIR)/flightmain.o
 BATTERY_OBJ := $(BUILD_DIR)/batteryheater.o
 LOGS_OBJ := $(BUILD_DIR)/logsmain.o
 
@@ -32,13 +31,9 @@ EXAMPLE_BINS := $(patsubst $(EXAMPLE_DIR)/%.c,$(BIN_DIR)/%,$(EXAMPLE_SRCS))
 .PHONY: all clean rebuild examples directories run test ion-fresh run-ex setup-deps verify-yaml
 
 all: directories \
-	$(BIN_DIR)/flightmain \
 	$(BIN_DIR)/batteryheater \
 	$(BIN_DIR)/logsmain \
 	examples
-
-$(BIN_DIR)/flightmain: $(FLIGHT_OBJ) $(LIB_OBJS)
-	$(CC) $^ $(LDFLAGS) $(LDLIBS) -o $@
 
 $(BIN_DIR)/batteryheater: $(BATTERY_OBJ) $(LIB_OBJS)
 	$(CC) $^ $(LDFLAGS) $(LDLIBS) -o $@

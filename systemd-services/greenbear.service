@@ -1,0 +1,16 @@
+[Unit]
+Description=Green Bear USB telemetry
+After=logsmain.service
+Wants=logsmain.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/cubesat/MPM-Ion0-software/Ion
+ExecStart=/home/cubesat/.local/bin/uv run greenbear
+Restart=always
+RestartSec=2
+StandardOutput=append:/home/cubesat/logs/greenbear-stdout.log
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target
