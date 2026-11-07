@@ -36,6 +36,11 @@ wheels = [
 ]
 
 [[package]]
+name = "cdh-packets"
+version = "0.1.0"
+source = { git = "https://github.com/Orbital-CubeSat-McGill/cdh-cdc-cobs-packets.git?rev=98b32cb29bcef5e9436ce1ae0d2748ba424a4179#98b32cb29bcef5e9436ce1ae0d2748ba424a4179" }
+
+[[package]]
 name = "click"
 version = "8.5.0"
 source = { registry = "https://pypi.org/simple" }
@@ -84,6 +89,7 @@ name = "ion"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "cdh-packets" },
     { name = "pynmeagps" },
     { name = "pyrtcm" },
     { name = "pyserial" },
@@ -98,6 +104,7 @@ olaf = [
 
 [package.metadata]
 requires-dist = [
+    { name = "cdh-packets", git = "https://github.com/Orbital-CubeSat-McGill/cdh-cdc-cobs-packets.git?rev=98b32cb29bcef5e9436ce1ae0d2748ba424a4179" },
     { name = "oresat-olaf", marker = "extra == 'olaf'", specifier = ">=3.7.4" },
     { name = "pynmeagps", specifier = "==1.1.8" },
     { name = "pyrtcm", specifier = "==1.2.1" },

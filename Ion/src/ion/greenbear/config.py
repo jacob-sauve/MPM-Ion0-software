@@ -1,18 +1,21 @@
-"""Central tunables for Green Bear. Change numbers here, nowhere else."""
+"""Central tunables for Green Bear.
+
+Packet/wire constants come from ``cdh_packets`` so BBG stays in sync with
+the shared HITL package. USB and flight-loop paths stay local to Ion.
+"""
 
 from __future__ import annotations
 
-# --- identity / packet ---
-CALLSIGN: bytes = b"VE3 JKB"  # exactly 7 ASCII bytes; also acts as sync word
-VERSION: int = 1
-HEADER_SIZE: int = 16  # callsign(7) + version(1) + seq(2) + time(4) + length(2)
-CRC_SIZE: int = 2
-MAX_CONTENT: int = 1024  # bytes of packed content; absolute air ceiling is 2025
-
-# CRC-16/CCITT-FALSE parameters (see docs/greenbear-protocol.md)
-CRC_POLY: int = 0x1021
-CRC_INIT: int = 0xFFFF
-CRC_CHECK: int = 0x29B1  # binascii.crc_hqx(b"123456789", 0xFFFF)
+from cdh_packets.constants import (
+    CALLSIGN,
+    CRC_CHECK,
+    CRC_INIT,
+    CRC_POLY,
+    CRC_SIZE,
+    HEADER_SIZE,
+    MAX_CONTENT,
+    VERSION,
+)
 
 # --- USB ---
 USB_DEVICE: str = "/dev/ttyACM0"
@@ -27,3 +30,24 @@ SEND_LOG_DIR: str = "/home/cubesat/logs"
 SEND_LOG_PREFIX: str = "greenbear_"  # produces greenbear_001.log, etc.
 CSV_PREFIX: str = "ion"  # logsmain produces ion001.csv, etc.
 CSV_GLOB: str = "ion*.csv"
+
+__all__ = [
+    "CALLSIGN",
+    "CRC_CHECK",
+    "CRC_INIT",
+    "CRC_POLY",
+    "CRC_SIZE",
+    "CSV_DIR",
+    "CSV_GLOB",
+    "CSV_PREFIX",
+    "HEADER_SIZE",
+    "MAX_CONTENT",
+    "PACKET_INTERVAL_S",
+    "SEND_LOG_DIR",
+    "SEND_LOG_PREFIX",
+    "USB_BAUD",
+    "USB_DEVICE",
+    "USB_OPEN_RETRY_S",
+    "USB_WRITE_TIMEOUT_S",
+    "VERSION",
+]

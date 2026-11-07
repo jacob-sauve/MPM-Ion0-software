@@ -57,11 +57,17 @@ point is `uv run greenbear`.
 
 ## Layout (BBG)
 
+COBS / packet codecs live in the shared HITL package
+[`cdh-cdc-cobs-packets`](https://github.com/Orbital-CubeSat-McGill/cdh-cdc-cobs-packets)
+(`cdh_packets`). Ion re-exports them and keeps the test suites + stub
+vectors here (`Ion/tests/`, `stub_frames.py`).
+
 ```
 Ion/src/ion/greenbear/
-  config.py      all tunables
-  cobs.py        encode/decode          [USER skeleton]
-  packet.py      build/parse + crc16    [USER skeleton]
+  config.py      USB/flight tunables; packet constants from cdh_packets
+  cobs.py        re-export cdh_packets.cobs     [USER fills shared pkg]
+  packet.py      re-export cdh_packets.packet   [USER fills shared pkg]
+  stub_frames.py premade logical/wire pairs (failsafe)
   usb_link.py    UsbLink + FakeLink
   telemetry.py   Sample, CSV tail, build_content [USER slot]
   main.py        flight loop
@@ -86,9 +92,9 @@ using a copy of `packet.py` in `ground-station/` marked "keep in sync".
 3. **RB bridge + ground parser** — usb-bridge firmware, decoder.
 4. **Integration + pre-flight** — bench chain, checklist.
 
-User HITL slots: write `cobs.py` / `packet.py` after step 1; write
-`build_content` after step 2; review protocol doc before step 3; approve
-each step's diff before the next.
+User HITL slots: fill `cdh_packets` COBS/packet bodies (Ion tests are the
+spec); write `build_content` after step 2; review protocol doc before
+step 3; approve each step's diff before the next.
 
 ## RGB USB migration (future — stub)
 

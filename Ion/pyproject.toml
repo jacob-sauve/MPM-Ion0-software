@@ -10,6 +10,7 @@ dependencies = [
     "pyrtcm==1.2.1",
     "pyubx2==1.4.1",
     "smbus3==0.5.5",
+    "cdh-packets @ git+https://github.com/Orbital-CubeSat-McGill/cdh-cdc-cobs-packets.git@98b32cb29bcef5e9436ce1ae0d2748ba424a4179",
 ]
 
 [project.optional-dependencies]
@@ -21,6 +22,9 @@ greenbear = "ion.greenbear.main:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/ion"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [build-system]
 requires = ["hatchling"]
