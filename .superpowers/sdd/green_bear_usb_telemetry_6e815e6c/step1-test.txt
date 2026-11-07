@@ -1,0 +1,652 @@
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE..EEEEEE
+======================================================================
+ERROR: test_decode_embedded_zero_raises (test_cobs.TestCobsMalformed.test_decode_embedded_zero_raises)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 100, in test_decode_embedded_zero_raises
+    cobs.decode(b"\x03\x11\x00\x22")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 56, in decode
+    raise NotImplementedError("fill in: plain COBS decode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS decode; see test_cobs.py
+
+======================================================================
+ERROR: test_decode_empty_raises (test_cobs.TestCobsMalformed.test_decode_empty_raises)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 91, in test_decode_empty_raises
+    cobs.decode(b"")
+    ~~~~~~~~~~~^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 56, in decode
+    raise NotImplementedError("fill in: plain COBS decode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS decode; see test_cobs.py
+
+======================================================================
+ERROR: test_decode_truncated_code_raises (test_cobs.TestCobsMalformed.test_decode_truncated_code_raises)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 96, in test_decode_truncated_code_raises
+    cobs.decode(b"\x05\x11\x22")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 56, in decode
+    raise NotImplementedError("fill in: plain COBS decode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS decode; see test_cobs.py
+
+======================================================================
+ERROR: test_encoded_contains_no_zeros (test_cobs.TestCobsProperties.test_encoded_contains_no_zeros) (sample='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 61, in test_encoded_contains_no_zeros
+    encoded = cobs.encode(sample)
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_encoded_contains_no_zeros (test_cobs.TestCobsProperties.test_encoded_contains_no_zeros) (sample='00000000000000000000')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 61, in test_encoded_contains_no_zeros
+    encoded = cobs.encode(sample)
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_encoded_contains_no_zeros (test_cobs.TestCobsProperties.test_encoded_contains_no_zeros) (sample='000102030405060708090a0b0c0d0e0f10111213')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 61, in test_encoded_contains_no_zeros
+    encoded = cobs.encode(sample)
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_encoded_contains_no_zeros (test_cobs.TestCobsProperties.test_encoded_contains_no_zeros) (sample='ffffffffffffffffffffffffffffffffffffffff')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 61, in test_encoded_contains_no_zeros
+    encoded = cobs.encode(sample)
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_encoded_contains_no_zeros (test_cobs.TestCobsProperties.test_encoded_contains_no_zeros) (sample='616263006465660000676869')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 61, in test_encoded_contains_no_zeros
+    encoded = cobs.encode(sample)
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_round_trip_254_nonzero (test_cobs.TestCobsProperties.test_round_trip_254_nonzero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 71, in test_round_trip_254_nonzero
+    encoded = cobs.encode(data)
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_round_trip_255_nonzero (test_cobs.TestCobsProperties.test_round_trip_255_nonzero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 77, in test_round_trip_255_nonzero
+    self.assertEqual(cobs.decode(cobs.encode(data)), data)
+                                 ~~~~~~~~~~~^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_round_trip_all_byte_values (test_cobs.TestCobsProperties.test_round_trip_all_byte_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 66, in test_round_trip_all_byte_values
+    self.assertEqual(cobs.decode(cobs.encode(data)), data)
+                                 ~~~~~~~~~~~^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_round_trip_many_zeros (test_cobs.TestCobsProperties.test_round_trip_many_zeros)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 81, in test_round_trip_many_zeros
+    self.assertEqual(cobs.decode(cobs.encode(data)), data)
+                                 ~~~~~~~~~~~^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_round_trip_zero_heavy_mixed (test_cobs.TestCobsProperties.test_round_trip_zero_heavy_mixed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 85, in test_round_trip_zero_heavy_mixed
+    self.assertEqual(cobs.decode(cobs.encode(data)), data)
+                                 ~~~~~~~~~~~^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_decode_published_vectors (test_cobs.TestCobsPublished.test_decode_published_vectors) (plain='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 42, in test_decode_published_vectors
+    self.assertEqual(cobs.decode(encoded), plain)
+                     ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 56, in decode
+    raise NotImplementedError("fill in: plain COBS decode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS decode; see test_cobs.py
+
+======================================================================
+ERROR: test_decode_published_vectors (test_cobs.TestCobsPublished.test_decode_published_vectors) (plain='00')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 42, in test_decode_published_vectors
+    self.assertEqual(cobs.decode(encoded), plain)
+                     ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 56, in decode
+    raise NotImplementedError("fill in: plain COBS decode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS decode; see test_cobs.py
+
+======================================================================
+ERROR: test_decode_published_vectors (test_cobs.TestCobsPublished.test_decode_published_vectors) (plain='0000')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 42, in test_decode_published_vectors
+    self.assertEqual(cobs.decode(encoded), plain)
+                     ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 56, in decode
+    raise NotImplementedError("fill in: plain COBS decode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS decode; see test_cobs.py
+
+======================================================================
+ERROR: test_decode_published_vectors (test_cobs.TestCobsPublished.test_decode_published_vectors) (plain='11')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 42, in test_decode_published_vectors
+    self.assertEqual(cobs.decode(encoded), plain)
+                     ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 56, in decode
+    raise NotImplementedError("fill in: plain COBS decode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS decode; see test_cobs.py
+
+======================================================================
+ERROR: test_decode_published_vectors (test_cobs.TestCobsPublished.test_decode_published_vectors) (plain='1122')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 42, in test_decode_published_vectors
+    self.assertEqual(cobs.decode(encoded), plain)
+                     ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 56, in decode
+    raise NotImplementedError("fill in: plain COBS decode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS decode; see test_cobs.py
+
+======================================================================
+ERROR: test_decode_published_vectors (test_cobs.TestCobsPublished.test_decode_published_vectors) (plain='1100')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 42, in test_decode_published_vectors
+    self.assertEqual(cobs.decode(encoded), plain)
+                     ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 56, in decode
+    raise NotImplementedError("fill in: plain COBS decode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS decode; see test_cobs.py
+
+======================================================================
+ERROR: test_decode_published_vectors (test_cobs.TestCobsPublished.test_decode_published_vectors) (plain='110000')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 42, in test_decode_published_vectors
+    self.assertEqual(cobs.decode(encoded), plain)
+                     ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 56, in decode
+    raise NotImplementedError("fill in: plain COBS decode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS decode; see test_cobs.py
+
+======================================================================
+ERROR: test_decode_published_vectors (test_cobs.TestCobsPublished.test_decode_published_vectors) (plain='11220033')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 42, in test_decode_published_vectors
+    self.assertEqual(cobs.decode(encoded), plain)
+                     ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 56, in decode
+    raise NotImplementedError("fill in: plain COBS decode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS decode; see test_cobs.py
+
+======================================================================
+ERROR: test_decode_published_vectors (test_cobs.TestCobsPublished.test_decode_published_vectors) (plain='11223344')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 42, in test_decode_published_vectors
+    self.assertEqual(cobs.decode(encoded), plain)
+                     ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 56, in decode
+    raise NotImplementedError("fill in: plain COBS decode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS decode; see test_cobs.py
+
+======================================================================
+ERROR: test_decode_published_vectors (test_cobs.TestCobsPublished.test_decode_published_vectors) (plain='1122334455')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 42, in test_decode_published_vectors
+    self.assertEqual(cobs.decode(encoded), plain)
+                     ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 56, in decode
+    raise NotImplementedError("fill in: plain COBS decode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS decode; see test_cobs.py
+
+======================================================================
+ERROR: test_decode_published_vectors (test_cobs.TestCobsPublished.test_decode_published_vectors) (plain='001100002200')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 42, in test_decode_published_vectors
+    self.assertEqual(cobs.decode(encoded), plain)
+                     ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 56, in decode
+    raise NotImplementedError("fill in: plain COBS decode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS decode; see test_cobs.py
+
+======================================================================
+ERROR: test_encode_published_vectors (test_cobs.TestCobsPublished.test_encode_published_vectors) (plain='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 37, in test_encode_published_vectors
+    self.assertEqual(cobs.encode(plain), encoded)
+                     ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_encode_published_vectors (test_cobs.TestCobsPublished.test_encode_published_vectors) (plain='00')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 37, in test_encode_published_vectors
+    self.assertEqual(cobs.encode(plain), encoded)
+                     ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_encode_published_vectors (test_cobs.TestCobsPublished.test_encode_published_vectors) (plain='0000')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 37, in test_encode_published_vectors
+    self.assertEqual(cobs.encode(plain), encoded)
+                     ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_encode_published_vectors (test_cobs.TestCobsPublished.test_encode_published_vectors) (plain='11')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 37, in test_encode_published_vectors
+    self.assertEqual(cobs.encode(plain), encoded)
+                     ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_encode_published_vectors (test_cobs.TestCobsPublished.test_encode_published_vectors) (plain='1122')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 37, in test_encode_published_vectors
+    self.assertEqual(cobs.encode(plain), encoded)
+                     ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_encode_published_vectors (test_cobs.TestCobsPublished.test_encode_published_vectors) (plain='1100')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 37, in test_encode_published_vectors
+    self.assertEqual(cobs.encode(plain), encoded)
+                     ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_encode_published_vectors (test_cobs.TestCobsPublished.test_encode_published_vectors) (plain='110000')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 37, in test_encode_published_vectors
+    self.assertEqual(cobs.encode(plain), encoded)
+                     ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_encode_published_vectors (test_cobs.TestCobsPublished.test_encode_published_vectors) (plain='11220033')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 37, in test_encode_published_vectors
+    self.assertEqual(cobs.encode(plain), encoded)
+                     ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_encode_published_vectors (test_cobs.TestCobsPublished.test_encode_published_vectors) (plain='11223344')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 37, in test_encode_published_vectors
+    self.assertEqual(cobs.encode(plain), encoded)
+                     ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_encode_published_vectors (test_cobs.TestCobsPublished.test_encode_published_vectors) (plain='1122334455')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 37, in test_encode_published_vectors
+    self.assertEqual(cobs.encode(plain), encoded)
+                     ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_encode_published_vectors (test_cobs.TestCobsPublished.test_encode_published_vectors) (plain='001100002200')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 37, in test_encode_published_vectors
+    self.assertEqual(cobs.encode(plain), encoded)
+                     ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_round_trip_published (test_cobs.TestCobsPublished.test_round_trip_published) (plain='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 47, in test_round_trip_published
+    self.assertEqual(cobs.decode(cobs.encode(plain)), plain)
+                                 ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_round_trip_published (test_cobs.TestCobsPublished.test_round_trip_published) (plain='00')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 47, in test_round_trip_published
+    self.assertEqual(cobs.decode(cobs.encode(plain)), plain)
+                                 ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_round_trip_published (test_cobs.TestCobsPublished.test_round_trip_published) (plain='0000')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 47, in test_round_trip_published
+    self.assertEqual(cobs.decode(cobs.encode(plain)), plain)
+                                 ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_round_trip_published (test_cobs.TestCobsPublished.test_round_trip_published) (plain='11')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 47, in test_round_trip_published
+    self.assertEqual(cobs.decode(cobs.encode(plain)), plain)
+                                 ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_round_trip_published (test_cobs.TestCobsPublished.test_round_trip_published) (plain='1122')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 47, in test_round_trip_published
+    self.assertEqual(cobs.decode(cobs.encode(plain)), plain)
+                                 ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_round_trip_published (test_cobs.TestCobsPublished.test_round_trip_published) (plain='1100')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 47, in test_round_trip_published
+    self.assertEqual(cobs.decode(cobs.encode(plain)), plain)
+                                 ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_round_trip_published (test_cobs.TestCobsPublished.test_round_trip_published) (plain='110000')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 47, in test_round_trip_published
+    self.assertEqual(cobs.decode(cobs.encode(plain)), plain)
+                                 ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_round_trip_published (test_cobs.TestCobsPublished.test_round_trip_published) (plain='11220033')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 47, in test_round_trip_published
+    self.assertEqual(cobs.decode(cobs.encode(plain)), plain)
+                                 ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_round_trip_published (test_cobs.TestCobsPublished.test_round_trip_published) (plain='11223344')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 47, in test_round_trip_published
+    self.assertEqual(cobs.decode(cobs.encode(plain)), plain)
+                                 ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_round_trip_published (test_cobs.TestCobsPublished.test_round_trip_published) (plain='1122334455')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 47, in test_round_trip_published
+    self.assertEqual(cobs.decode(cobs.encode(plain)), plain)
+                                 ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_round_trip_published (test_cobs.TestCobsPublished.test_round_trip_published) (plain='001100002200')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_cobs.py", line 47, in test_round_trip_published
+    self.assertEqual(cobs.decode(cobs.encode(plain)), plain)
+                                 ~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/cobs.py", line 34, in encode
+    raise NotImplementedError("fill in: plain COBS encode; see test_cobs.py")
+NotImplementedError: fill in: plain COBS encode; see test_cobs.py
+
+======================================================================
+ERROR: test_callsign_prefix (test_packet.TestBuild.test_callsign_prefix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_packet.py", line 68, in test_callsign_prefix
+    frame = packet.build(seq=0, time=0, content=b"")
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/packet.py", line 65, in build
+    raise NotImplementedError("fill in: packet.build; see test_packet.py")
+NotImplementedError: fill in: packet.build; see test_packet.py
+
+======================================================================
+ERROR: test_frame_length (test_packet.TestBuild.test_frame_length)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_packet.py", line 53, in test_frame_length
+    frame = packet.build(seq=0, time=0, content=content)
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/packet.py", line 65, in build
+    raise NotImplementedError("fill in: packet.build; see test_packet.py")
+NotImplementedError: fill in: packet.build; see test_packet.py
+
+======================================================================
+ERROR: test_little_endian_fields (test_packet.TestBuild.test_little_endian_fields)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_packet.py", line 60, in test_little_endian_fields
+    frame = packet.build(seq=0x1234, time=0x89ABCDEF, content=b"\xaa")
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/packet.py", line 65, in build
+    raise NotImplementedError("fill in: packet.build; see test_packet.py")
+NotImplementedError: fill in: packet.build; see test_packet.py
+
+======================================================================
+ERROR: test_max_content_accepted (test_packet.TestBuild.test_max_content_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_packet.py", line 73, in test_max_content_accepted
+    frame = packet.build(seq=9, time=9, content=content)
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/packet.py", line 65, in build
+    raise NotImplementedError("fill in: packet.build; see test_packet.py")
+NotImplementedError: fill in: packet.build; see test_packet.py
+
+======================================================================
+ERROR: test_max_content_plus_one_rejected (test_packet.TestBuild.test_max_content_plus_one_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_packet.py", line 79, in test_max_content_plus_one_rejected
+    packet.build(seq=0, time=0, content=content)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/packet.py", line 65, in build
+    raise NotImplementedError("fill in: packet.build; see test_packet.py")
+NotImplementedError: fill in: packet.build; see test_packet.py
+
+======================================================================
+ERROR: test_round_trip_empty_content (test_packet.TestBuild.test_round_trip_empty_content)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_packet.py", line 35, in test_round_trip_empty_content
+    frame = packet.build(seq=1, time=1_700_000_000, content=b"")
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/packet.py", line 65, in build
+    raise NotImplementedError("fill in: packet.build; see test_packet.py")
+NotImplementedError: fill in: packet.build; see test_packet.py
+
+======================================================================
+ERROR: test_round_trip_with_content (test_packet.TestBuild.test_round_trip_with_content)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_packet.py", line 45, in test_round_trip_with_content
+    frame = packet.build(seq=0x1234, time=42, content=content)
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/packet.py", line 65, in build
+    raise NotImplementedError("fill in: packet.build; see test_packet.py")
+NotImplementedError: fill in: packet.build; see test_packet.py
+
+======================================================================
+ERROR: test_seq_wraps_to_u16 (test_packet.TestBuild.test_seq_wraps_to_u16)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_packet.py", line 84, in test_seq_wraps_to_u16
+    frame = packet.build(seq=65536, time=0, content=b"")
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/packet.py", line 65, in build
+    raise NotImplementedError("fill in: packet.build; see test_packet.py")
+NotImplementedError: fill in: packet.build; see test_packet.py
+
+======================================================================
+ERROR: test_bad_callsign_raises (test_packet.TestParse.test_bad_callsign_raises)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_packet.py", line 101, in test_bad_callsign_raises
+    packet.parse(frame)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/packet.py", line 87, in parse
+    raise NotImplementedError("fill in: packet.parse; see test_packet.py")
+NotImplementedError: fill in: packet.parse; see test_packet.py
+
+======================================================================
+ERROR: test_bad_crc_raises (test_packet.TestParse.test_bad_crc_raises)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_packet.py", line 113, in test_bad_crc_raises
+    frame = bytearray(packet.build(seq=1, time=1, content=b"hi"))
+                      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/packet.py", line 65, in build
+    raise NotImplementedError("fill in: packet.build; see test_packet.py")
+NotImplementedError: fill in: packet.build; see test_packet.py
+
+======================================================================
+ERROR: test_bad_version_raises (test_packet.TestParse.test_bad_version_raises)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_packet.py", line 110, in test_bad_version_raises
+    packet.parse(frame)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/packet.py", line 87, in parse
+    raise NotImplementedError("fill in: packet.parse; see test_packet.py")
+NotImplementedError: fill in: packet.parse; see test_packet.py
+
+======================================================================
+ERROR: test_known_vector_callsign_empty (test_packet.TestParse.test_known_vector_callsign_empty)
+Fixed vector: seq=0x1234, time=0, empty content.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_packet.py", line 136, in test_known_vector_callsign_empty
+    built = packet.build(seq=0x1234, time=0, content=b"")
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/packet.py", line 65, in build
+    raise NotImplementedError("fill in: packet.build; see test_packet.py")
+NotImplementedError: fill in: packet.build; see test_packet.py
+
+======================================================================
+ERROR: test_length_mismatch_raises (test_packet.TestParse.test_length_mismatch_raises)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_packet.py", line 125, in test_length_mismatch_raises
+    packet.parse(frame)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/packet.py", line 87, in parse
+    raise NotImplementedError("fill in: packet.parse; see test_packet.py")
+NotImplementedError: fill in: packet.parse; see test_packet.py
+
+======================================================================
+ERROR: test_truncation_raises (test_packet.TestParse.test_truncation_raises)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/tests/test_packet.py", line 91, in test_truncation_raises
+    packet.parse(b"short")
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/jsauve/Documents/GitHub/MPM-Ion0-software/Ion/src/ion/greenbear/packet.py", line 87, in parse
+    raise NotImplementedError("fill in: packet.parse; see test_packet.py")
+NotImplementedError: fill in: packet.parse; see test_packet.py
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.006s
+
+FAILED (errors=60)
