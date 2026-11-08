@@ -123,14 +123,12 @@ char logData()
     if (bufferLen >= chunkSize)
     {
         int bytesWritten = write(file, dataBuffer, bufferLen);
-        if (bytesWritten > 0)
+        if (bytesWritten <= 0)
         {
-            fsync(file);
-        }else{
             return 1;
         }
+        fsync(file);
         bufferLen = 0;
-        return 1;
     }
     return 0;
 }
@@ -158,14 +156,12 @@ char logMessage(const char* message)
     if (bufferLen >= chunkSize)
     {
         int bytesWritten = write(file, dataBuffer, bufferLen);
-        if (bytesWritten > 0)
+        if (bytesWritten <= 0)
         {
-            fsync(file);
-        }else{
             return 1;
         }
+        fsync(file);
         bufferLen = 0;
-        return 1;
     }
     return 0;
 }
