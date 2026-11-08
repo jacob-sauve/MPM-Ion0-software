@@ -91,11 +91,11 @@
         >;
     };
 
-    /* Two-cell <offset value> form required by am33xx_pinmux (#pinctrl-cells = <1>). */
+    /* Three-cell form that correctly muxes both I2C1 lines on this kernel. */
     bb_i2c1_pins: pinmux_bb_i2c1_pins {
         pinctrl-single,pins = <
-            0x15c (SLEWCTRL_SLOW | PIN_INPUT_PULLUP | MUX_MODE2) /* P9_17 SCL */
-            0x158 (SLEWCTRL_SLOW | PIN_INPUT_PULLUP | MUX_MODE2) /* P9_18 SDA */
+            0x158 0x70 0x02  /* P9_18 SDA */
+            0x15c 0x70 0x02  /* P9_17 SCL */
         >;
     };
 
