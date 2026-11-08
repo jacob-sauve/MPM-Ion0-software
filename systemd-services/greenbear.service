@@ -4,9 +4,11 @@ After=logsmain.service
 Wants=logsmain.service
 
 [Service]
+User=cubesat
+Group=dialout
 Type=simple
 WorkingDirectory=/home/cubesat/MPM-Ion0-software/Ion
-ExecStart=/home/cubesat/.local/bin/uv run greenbear
+ExecStart=/home/cubesat/.local/bin/uv run greenbear --stub
 Restart=always
 RestartSec=2
 StandardOutput=append:/home/cubesat/logs/greenbear-stdout.log

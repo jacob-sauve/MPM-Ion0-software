@@ -1,3 +1,5 @@
+import sys
+
 from olaf import app, olaf_run, olaf_setup, render_olaf_template, rest_api
 from ion.services.services import BatteryHeaterService, LogsMainService
 from ion.resources.green_board import GreenBoardResource
@@ -13,6 +15,8 @@ def main():
     print("Hello from ion!")
 
     # set up project configuration
+    if "--bus" not in sys.argv and "-b" not in sys.argv:
+        sys.argv.extend(["--bus", "can0"])
     olaf_setup("c3")
     
     # load template for flask

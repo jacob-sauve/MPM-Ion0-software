@@ -27,7 +27,7 @@ USB_WRITE_TIMEOUT_S: float = 1.0
 RB_CONSOLE_LOG: bool = True  # log RB printk lines that come back on the port
 
 # --- flight loop ---
-PACKET_INTERVAL_S: float = 20.0
+PACKET_INTERVAL_S: float = 1.0
 CSV_DIR: str = "/home/cubesat/logs"
 SEND_LOG_DIR: str = "/home/cubesat/logs"
 SEND_LOG_PREFIX: str = "greenbear_"  # produces greenbear_001.log, etc.
