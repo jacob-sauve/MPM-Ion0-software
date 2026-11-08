@@ -5,10 +5,11 @@
 #include "thermistor.h"
 
 #define PROB 1 //define probe used to measure battery temp.
-#define EXPORT "/sys/class/pwm/pwmchip4/export"
-#define PERIOD "/sys/class/pwm/pwmchip4/pwm1/period"
-#define DUTY_CYCLE "/sys/class/pwm/pwmchip4/pwm1/duty_cycle"
-#define ENABLE "/sys/class/pwm/pwmchip4/pwm1/enable"
+/* ehrpwm1 (P9_16) — chip index depends on probe order; expect pwmchip1 when all three ehrpwms load. */
+#define EXPORT "/sys/class/pwm/pwmchip1/export"
+#define PERIOD "/sys/class/pwm/pwmchip1/pwm1/period"
+#define DUTY_CYCLE "/sys/class/pwm/pwmchip1/pwm1/duty_cycle"
+#define ENABLE "/sys/class/pwm/pwmchip1/pwm1/enable"
 /* Probe open-circuit / read failure sits near absolute zero on this ADC path. */
 #define DISCONNECT_TEMP_C (-80.0)
 /* Off at/above OFF_TEMP; half duty between HALF_TEMP and OFF_TEMP; full below. */
@@ -26,7 +27,7 @@ int initBAT() {
         fpwm = NULL;
         usleep(50000); /* let udev/sysfs create pwm1 */
     } else if (access(DUTY_CYCLE, W_OK) != 0) {
-        perror("pwmchip4 export");
+        perror("pwmchip1 export");
         return 1;
     }
 
@@ -34,7 +35,7 @@ int initBAT() {
     fduty = fopen(DUTY_CYCLE, "w");
     fen = fopen(ENABLE, "w");
     if (fperiod == NULL || fduty == NULL || fen == NULL) {
-        perror("pwmchip4/pwm1 open");
+        perror("pwmchip1/pwm1 open");
         if (fperiod) fclose(fperiod);
         if (fduty) fclose(fduty);
         if (fen) fclose(fen);

@@ -99,22 +99,23 @@
         >;
     };
 
+    /* Same 3-cell <offset conf mode> form as I2C — 2-cell yields "no pins entries". */
     epwmss0_pins: pinmux_epwmss0_pins {
         pinctrl-single,pins = <
-            0x150 (PIN_OUTPUT | MUX_MODE3)         /* P9_22 */
+            0x150 0x00 0x03  /* P9_22 EHRPWM0B */
         >;
     };
 
     epwmss1_pins: pinmux_epwmss1_pins {
         pinctrl-single,pins = <
-            0x04c (PIN_OUTPUT | MUX_MODE6)         /* P9_16 */
+            0x04c 0x00 0x06  /* P9_16 EHRPWM1B (battery heater) */
         >;
     };
 
     epwmss2_pins: pinmux_epwmss2_pins {
         pinctrl-single,pins = <
-            0x0a4 (PIN_OUTPUT | MUX_MODE3)         /* P8_46 */
-            0x19c (PIN_INPUT | MUX_MODE4)          /* P9_28 */
+            0x0a4 0x00 0x03  /* P8_46 EHRPWM2B */
+            0x19c 0x20 0x04  /* P9_28 */
         >;
     };
 };
