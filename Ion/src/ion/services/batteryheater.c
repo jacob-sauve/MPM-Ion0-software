@@ -18,20 +18,39 @@
 static FILE *fpwm, *fperiod, *fduty, *fen;
 
 int initBAT() {
-    //open and enable pwm if it is not already
+    /* Export channel 1 if needed. EBUSY means it is already exported. */
     fpwm = fopen(EXPORT, "w");
-    fprintf(fpwm, "1");
-    fclose(fpwm);
+    if (fpwm != NULL) {
+        fprintf(fpwm, "1");
+        fclose(fpwm);
+        fpwm = NULL;
+        usleep(50000); /* let udev/sysfs create pwm1 */
+    } else if (access(DUTY_CYCLE, W_OK) != 0) {
+        perror("pwmchip4 export");
+        return 1;
+    }
 
-    fperiod = fopen(PERIOD, "w"); //set pwm period
-    fduty = fopen(DUTY_CYCLE, "w"); //set pwm duty cycle by writing to this file
-    fen = fopen(ENABLE, "w"); //enable the PWM by writting 1 to the file
+    fperiod = fopen(PERIOD, "w");
+    fduty = fopen(DUTY_CYCLE, "w");
+    fen = fopen(ENABLE, "w");
+    if (fperiod == NULL || fduty == NULL || fen == NULL) {
+        perror("pwmchip4/pwm1 open");
+        if (fperiod) fclose(fperiod);
+        if (fduty) fclose(fduty);
+        if (fen) fclose(fen);
+        fperiod = fduty = fen = NULL;
+        return 1;
+    }
 
-    fprintf(fperiod, "1000000"); //set frequency to 1kHz
-    fprintf(fduty, "0"); //set frequency to 1kHz
-    fprintf(fen, "1"); //set frequency to 1kHz
+    fprintf(fperiod, "1000000"); /* 1 kHz */
+    fprintf(fduty, "0");
+    fprintf(fen, "1");
+    fflush(fperiod);
+    fflush(fduty);
+    fflush(fen);
     fclose(fperiod);
     fclose(fen);
+    fperiod = fen = NULL;
     return 0;
 }
 
